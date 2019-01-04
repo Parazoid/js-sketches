@@ -1,13 +1,12 @@
+// No idea what to do with this.
+
 let data;
 let canavs;
 let block;
 
 function preload() {
     data = loadJSON("sketch-data.json");
-}
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
 }
 
 
@@ -18,7 +17,13 @@ function setup() {
 }
 
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+
+}
+
+
 function draw() {
     clear();
-    ellipse(width/2, height/2, 100);
+
 }
