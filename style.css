@@ -1,7 +1,7 @@
 html {
     font-family: 'Thasadith', sans-serif;
     color: #eeeeee;
-    background-color: #2C2F33;
+    background-color: #23272a;
 }
 h1 {
     margin: 0;
@@ -16,7 +16,7 @@ h2 {
     text-align: center;
 }
 a {
-    color: #0099CC;
+    color: #0099cc;
     text-decoration: none;
 }
 a:hover {
@@ -29,8 +29,15 @@ h6 {
     text-align: center;
     font-size: 15px;
 }
-#page-info {
+
+#blocks-canvas {
     position: relative;
-    margin-top: 100%;
-    margin-bottom: 0%;
+}
+
+.page-info {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%
 }
