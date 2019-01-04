@@ -10,7 +10,7 @@ h1 {
     font-weight: normal;
     text-shadow: 3px 3px 35px black;
 }
-h2 {
+.subtitle {
     margin: 20px;
     font-size: 25px;
     text-align: center;
