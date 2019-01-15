@@ -20,7 +20,7 @@ function windowResized() {
 
 }
 
-function mousePressed() {
+function mousePressed() { // Restarts when mouse is pressed.
     background(bgcolor);
     linex = 0;
     liney = 0;
