@@ -26,4 +26,4 @@ A click will restart the sketch.  There's a book titled [10PRINT](https://10prin
 
 This project uses [p5.js](https://p5js.org/) Javascript Framework, which is licensed under the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl-2.1.txt). You are free to modify or redistribute it under the terms of the license as published by the Free Software Foundation, version 2.1. You can find the github repository for the library at https://github.com/processing/p5.js. 
 
-Copyright (c) 2018 Lauren McCarthey - The Processing Foundation. All rights reserved.
+Copyright (c) 2018 Lauren McCarthy - The Processing Foundation. All rights reserved.
