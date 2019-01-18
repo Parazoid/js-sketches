@@ -23,6 +23,7 @@ A click anywhere on the page will restart the sketch.  There's a book titled [10
 ### Chocolate Rain
 A bunch of Chocolate-ish coloured rain, it's the first sketch that uses classes.
 [By virtue of Chocolate Rain by Tay Zonday.](https://www.youtube.com/watch?v=EwTZ2xpQwpA)
+
 *TODO: Add rain sounds? Add thunder and lightning? Improve visual aspects..*
 
 ---
