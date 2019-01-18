@@ -16,7 +16,7 @@ class Drop {
     }
 
     show() {
-        stroke(120, 85, 55, this.alpha); // Chocolate-ish colour, with some alpha.
+        stroke(150, 115, 100, this.alpha); // Chocolate-ish colour, with some alpha.
         strokeWeight(this.weight);
         line(this.x1, this.y1, this.x2, this.y2);
     }
