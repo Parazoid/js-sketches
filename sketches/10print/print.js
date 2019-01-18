@@ -5,19 +5,17 @@ let bgcolor; // #23272a
 let canvas;
 let linex = 0;
 let liney = 0;
-let offset = 25;
-let chance = 0.5;
+const OFFSET = 25;
+const CHANCE = 0.5;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     bgcolor = color(35, 39, 42);
     background(bgcolor);
-
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-
 }
 
 function mousePressed() { // Restarts when mouse is pressed.
@@ -25,24 +23,22 @@ function mousePressed() { // Restarts when mouse is pressed.
     linex = 0;
     liney = 0;
     loop();
-    
 }
 
 function draw() {
     stroke(255);
     strokeWeight(2);
-    if (random(1) < chance) {
-        line(linex, liney, linex + offset, liney + offset);
+    if (random(1) < CHANCE) { // Forward-Slash or Back-Slash.
+        line(linex, liney, linex + OFFSET, liney + OFFSET);
     } else {
-        line(linex, liney + offset, linex + offset, liney);
+        line(linex, liney + OFFSET, linex + OFFSET, liney);
     }
-    linex += offset;
+    linex += OFFSET;
     if (linex > width) {
         linex = 0;
-        liney += offset;
+        liney += OFFSET;
         if (liney > height) { // Stops the drawings from going off-screen.
             noLoop();
         }
     }
-
 }

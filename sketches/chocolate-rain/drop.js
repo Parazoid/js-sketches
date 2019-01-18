@@ -13,14 +13,12 @@ class Drop {
         this.yspeed = yspeed;
         this.alpha = alpha;
         this.weight = weight;
-
     }
 
     show() {
         stroke(120, 85, 55, this.alpha); // Chocolate-ish colour, with some alpha.
         strokeWeight(this.weight);
         line(this.x1, this.y1, this.x2, this.y2);
-
     }
 
     fall() {
@@ -32,7 +30,5 @@ class Drop {
             this.y1 = this.y;
             this.y2 = this.y1 + this.len;
         }
-
     }
-
 }
