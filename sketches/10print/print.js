@@ -24,12 +24,13 @@ function mousePressed() { // Restarts when mouse is pressed.
     background(bgcolor);
     linex = 0;
     liney = 0;
+    loop();
+    
 }
 
 function draw() {
     stroke(255);
     strokeWeight(2);
-
     if (random(1) < chance) {
         line(linex, liney, linex + offset, liney + offset);
     } else {
@@ -39,7 +40,7 @@ function draw() {
     if (linex > width) {
         linex = 0;
         liney += offset;
-        if (liney > height) {
+        if (liney > height) { // Stops the drawings from going off-screen.
             noLoop();
         }
     }
