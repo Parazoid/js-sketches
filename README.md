@@ -20,6 +20,11 @@ A click anywhere on the page will restart the sketch.  There's a book titled [10
 
 *Fun Fact: The C64 character set is called PETSCII, from the prior Commodore Pet. It’s interesting because unlike ASCII, it’s full of graphics: https://en.wikipedia.org/wiki/PETSCII*
 
+### Chocolate Rain
+A bunch of Chocolate-ish coloured rain, it's the first sketch that uses classes.
+[By virtue of Chocolate Rain by Tay Zonday](https://www.youtube.com/watch?v=EwTZ2xpQwpA)
+
+*TODO: Add rain sounds? Add thunder and lightning? Improve visual aspects..*
 ---
 
 ## P5.js
