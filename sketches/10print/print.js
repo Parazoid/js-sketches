@@ -1,5 +1,5 @@
-// 10 PRINT CHR$(205.5+RND(1)); : GOTO 10
 // Javascript implementation of the one-line Commodore 64 BASIC program.
+// 10 PRINT CHR$(205.5+RND(1)); : GOTO 10
 
 let bgcolor; // #23272a
 let canvas;
