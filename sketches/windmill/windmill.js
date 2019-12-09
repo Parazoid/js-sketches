@@ -2,7 +2,7 @@ let bgcolor; // #23272a
 let canvas;
 let windowCenter;
 let points = []; // Point Array
-let pointnum = 3; // Amount of points on the screen.
+let pointnum = 60; // Amount of points on the screen.
 let mill;
 let millAngle;
 
@@ -15,10 +15,10 @@ function setup() { // Canvas Setup
     angleMode(DEGREES);
 
     for (let i = 0; i < pointnum; i++) {
-        points[i] = new Point(random(width-30), random(height-30), 5);
+        points[i] = new Point(random(-(width/2), width/2), random(-(height/2), height/2), 5);
     }
 
-    mill = new Mill(height*width, 3, 0, 60);
+    mill = new Mill(width*2, 0.5, 0, 0);
 }
 
 function windowResized() {
@@ -28,17 +28,13 @@ function windowResized() {
 function draw() { // Animation
     background(bgcolor);
     translate(windowCenter); // Shifts the (0, 0) origin to the center of the window.
-
-    // push();
-    // for (let i = 0; i < pointnum; i++) {
-    //     points[i].show();
-    // }
-    // pop();
-    // translate(windowCenter.x, windowCenter.y);
-    // rotate(angle);
+    push();
+    for (let i = 0; i < pointnum; i++) {
+        points[i].show();
+    }
+    pop();
     mill.show();
     mill.spin();
-    // resetMatrix();
 
 }
 
@@ -61,25 +57,24 @@ class Point {
 }
 
 class Mill {
-    constructor(_len, _speed, _midpoint, _angle) {
+    constructor(_radius, _speed, _midpoint, _angle) { // Constructor for the line.
         this.angle = _angle;
-        this.len = _len;
-        this.a = createVector(round(this.len*(cos(this.angle))), -round((this.len*(sin(this.angle)))));
-        this.b = createVector(-round((this.len*(cos(this.angle)))), round(this.len*(sin(this.angle))));
+        this.radius = _radius; // Radius of the "unit circle" which correlates to the length of the line.
+        this.vectorA = createVector(round(this.radius*(cos(this.angle))), -round((this.radius*(sin(this.angle)))));
+        this.vectorB = createVector(-round((this.radius*(cos(this.angle)))), round(this.radius*(sin(this.angle))));
         this.speed = _speed * 0.25;
         this.midpoint = _midpoint;
-        //this.len = sqrt(sq(this.b.x - this.a.x) + sq(this.b.y - this.a.y)); // Formula for the length of the line based on pythagorean theorem.
-        // if (this.a.x != this.b.x) {
-        //     this.slope = (this.a.y - this.b.y) / (this.a.x - this.b.x);
+        
+        this.len = sqrt(sq(this.vectorB.x - this.vectorA.x) + sq(this.vectorB.y - this.vectorA.y)); // Formula for the radiusgth of the line based on pythagorean theorem.
+        if (this.vectorA.x != this.vectorB.x) { // If the line isn't vertical
+            this.slope = (this.vectorA.y - this.vectorB.y) / (this.vectorA.x - this.vectorB.x); // Calculate slope for line.
             
-        // }
-        // else {
-        //     this.millAngle = 35.6
-        // }
+        }
+
     }
 
     show() {
-        line(this.a.x, this.a.y, this.b.x, this.b.y);
+        line(this.vectorA.x, this.vectorA.y, this.vectorB.x, this.vectorB.y);
         stroke(255);
         strokeWeight(3);
 
@@ -88,8 +83,8 @@ class Mill {
     spin() {
         if (this.angle >= -360) {
             this.newAngle = this.angle - this.speed;
-            this.a = createVector(round(this.len*(cos(this.newAngle))), -round((this.len*(sin(this.newAngle)))));
-            this.b = createVector(-round((this.len*(cos(this.newAngle)))), round(this.len*(sin(this.newAngle))));
+            this.vectorA = createVector(round(this.radius*(cos(this.newAngle))), -round((this.radius*(sin(this.newAngle)))));
+            this.vectorB = createVector(-round((this.radius*(cos(this.newAngle)))), round(this.radius*(sin(this.newAngle))));
             this.show();
             this.angle = this.newAngle;
         }
