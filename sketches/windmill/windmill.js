@@ -14,11 +14,29 @@ function setup() { // Canvas Setup
 
     angleMode(DEGREES);
 
-    for (let i = 0; i < pointnum; i++) {
-        points[i] = new Point(random(-(width/2), width/2), random(-(height/2), height/2), 5);
-    }
+    // for (let i = 0; i < pointnum; i++) {
+    //     if (i = 0) {
+    //         let pvector1 = createVector(random(-(width/2), width/2), random(-(height/2), height/2));
+    //         points[i] = new Point(pvector1.x, pvector1.y, 5);
+    //     }
+    //     else {
+    //         let pvector2 = createVector(random(-(width/2), width/2), random(-(height/2), height/2));
+    //         points[i] = new Point(pvector2.x, pvector2.y, 5);
+    //         let slope1 = (pvector1.y - pvector2.y) / (pvector1.x - pvector2.x);
+    //         let pvector3 = createVector(random(-(width/2), width/2), random(-(height/2), height/2));
+    //         let slope2 = (pvector2.y - pvector3.y) / (pvector2.x - pvector3.x);
+    //         while (slope1 == slope2) {
+    //             pvector2 = createVector(random(-(width/2), width/2), random(-(height/2), height/2));
+    //             slope2 = (pvector2.y - pvector3.y) / (pvector2.x - pvector3.x);
+    //         }
+    //         points[i+1] = new Point(pvector3.x)
+    //     }
 
-    mill = new Mill(width*2, 0.5, 0, 0);
+
+
+
+
+    mill = new Mill(width*2, 1.5, 0, 0);
 }
 
 function windowResized() {
@@ -26,14 +44,14 @@ function windowResized() {
 }
 
 function draw() { // Animation
+    frameRate(60);
     background(bgcolor);
     translate(windowCenter); // Shifts the (0, 0) origin to the center of the window.
     push();
-    for (let i = 0; i < pointnum; i++) {
-        points[i].show();
-    }
+    // for (let i = 0; i < pointnum; i++) {
+    //     points[i].show();
+    // }
     pop();
-    mill.show();
     mill.spin();
 
 }
@@ -81,8 +99,8 @@ class Mill {
     }
 
     spin() {
-        if (this.angle >= -360) {
-            this.newAngle = this.angle - this.speed;
+        if (this.angle <= 359) {
+            this.newAngle = this.angle + this.speed;
             this.vectorA = createVector(round(this.radius*(cos(this.newAngle))), -round((this.radius*(sin(this.newAngle)))));
             this.vectorB = createVector(-round((this.radius*(cos(this.newAngle)))), round(this.radius*(sin(this.newAngle))));
             this.show();
@@ -90,6 +108,7 @@ class Mill {
         }
         else {
             this.angle = 0;
+            this.show();
         }
 
     }
