@@ -86,12 +86,16 @@ class Mill {
     }
 
     spin() {
-
-        this.newAngle = this.angle - this.speed;
-        this.a = createVector(round(this.len*(cos(this.newAngle))), -round((this.len*(sin(this.newAngle)))));
-        this.b = createVector(-round((this.len*(cos(this.newAngle)))), round(this.len*(sin(this.newAngle))));
-        this.show();
-        this.angle = this.newAngle;
+        if (this.angle >= -360) {
+            this.newAngle = this.angle - this.speed;
+            this.a = createVector(round(this.len*(cos(this.newAngle))), -round((this.len*(sin(this.newAngle)))));
+            this.b = createVector(-round((this.len*(cos(this.newAngle)))), round(this.len*(sin(this.newAngle))));
+            this.show();
+            this.angle = this.newAngle;
+        }
+        else {
+            this.angle = 0;
+        }
 
     }
 
