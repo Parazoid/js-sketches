@@ -1,6 +1,6 @@
-# JS Sketches
+# Mini Projects
   
-Small JavaScript sketches, animations, drawings, and mini-projects. You can think of it as a personal sandbox for the purposes of experimentation, learning, and fun.
+Small JavaScript sketches, animations, exercises, and other mini-projects. My personal sandbox for the purposes of experimentation, learning, and fun.
 
 ## Current Sketches
 More will be added over time.
@@ -9,7 +9,7 @@ More will be added over time.
 A simple empty sketch, used as a template. *Note: Please use the colour __"#23272a"__ if you can for the background of all sketches as to maintain a uniform look on the webhub.*
 
 ### Fractal Tree
-A fractal tree, recursion based. A good start on understanding recursion and DOM elements.
+A fractal tree, recursion based. A good start on understanding recursion, fractals, and DOM elements.
 
 ### 10PRINT
 A JavaScript re-implementation of the Commodore 64 BASIC one-line program;
@@ -22,9 +22,12 @@ A click anywhere on the page will restart the sketch.  There's a book titled [10
 
 ### Chocolate Rain
 A bunch of Chocolate-ish coloured rain, it's the first sketch that uses classes.
-[By virtue of Chocolate Rain by Tay Zonday.](https://www.youtube.com/watch?v=EwTZ2xpQwpA)
 
-*TODO: Add rain sounds? Add thunder and lightning? Improve visual aspects..*
+*TODO: This one is really terrible. Add rain sounds? Add thunder and lightning? Improve visual aspects..*
+
+### Windmill
+
+On hold.
 
 ---
 
