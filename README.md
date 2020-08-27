@@ -6,7 +6,7 @@ Small JavaScript sketches, animations, exercises, and other mini-projects. My pe
 More will be added over time.
 
 ### Sketch Template
-A simple empty sketch, used as a template. *Note: Please use the colour __"#23272a"__ if you can for the background of all sketches as to maintain a uniform look on the webhub.*
+A simple empty canvas, used as a template. *Note: Please use the colour __"#23272a"__ if you can for the background of all sketches as to maintain a uniform look on the webhub.*
 
 ### Fractal Tree
 A fractal tree, recursion based. A good start on understanding recursion, fractals, and DOM elements.
