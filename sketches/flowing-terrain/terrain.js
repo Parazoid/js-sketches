@@ -4,8 +4,8 @@ let bgcolor; // #23272a
 let canvas;
 let cols, rows;
 let scl = 25;
-let w = 1000;
-let h = 1200;
+let w;
+let h;
 
 let flying = 0;
 let flySlider;
@@ -14,6 +14,8 @@ let terrain = [];
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+    w = windowWidth - 200;
+    h = windowHeight - 100;
     bgcolor = color('#23272a');
     cols = w / scl;
     rows = h / scl;
