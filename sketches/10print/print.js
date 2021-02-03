@@ -18,7 +18,8 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
-function mousePressed() { // Restarts when mouse is pressed.
+function mousePressed() {
+    // Restarts when mouse is pressed.
     background(bgcolor);
     linex = 0;
     liney = 0;
@@ -28,7 +29,8 @@ function mousePressed() { // Restarts when mouse is pressed.
 function draw() {
     stroke(255);
     strokeWeight(2);
-    if (random(1) < CHANCE) { // Forward-Slash or Back-Slash.
+    if (random(1) < CHANCE) {
+        // Forward-Slash or Back-Slash.
         line(linex, liney, linex + OFFSET, liney + OFFSET);
     } else {
         line(linex, liney + OFFSET, linex + OFFSET, liney);
@@ -37,7 +39,8 @@ function draw() {
     if (linex > width) {
         linex = 0;
         liney += OFFSET;
-        if (liney > height) { // Stops the drawings from going off-screen.
+        if (liney > height) {
+            // Stops the drawings from going off-screen.
             noLoop();
         }
     }

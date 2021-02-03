@@ -25,11 +25,11 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
-function draw() { 
+function draw() {
     background(bgcolor);
-    translate(width/2, 0);
+    translate(width / 2, 0);
     for (let i = 0; i < drops.length; i++) {
         drops[i].show();
-        drops[i].fall(); 
+        drops[i].fall();
     }
 }

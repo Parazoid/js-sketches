@@ -3,7 +3,7 @@ let canvas;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
-    bgcolor = color('#23272a');
+    bgcolor = color("#23272a");
 }
 
 function windowResized() {

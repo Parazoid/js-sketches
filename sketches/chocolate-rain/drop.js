@@ -25,8 +25,7 @@ class Drop {
         if (this.y1 < height) {
             this.y1 += this.yspeed;
             this.y2 += this.yspeed;
-        }
-        else {
+        } else {
             this.y1 = this.y;
             this.y2 = this.y1 + this.len;
         }
