@@ -11,9 +11,20 @@ class Ship {
         rect(this.position.x, this.position.y, 50, 50);
     }
 
-    thrust() {
+    animate() {
+        // TODO
+    }
+
+    thrust(direction) {
         this.position = p5.Vector.add(this.position, this.velocity);
         this.accel = createVector(mouseX, mouseY);
-        this.velocity.add(this.accel);
+    }
+
+    shoot() {}
+
+    collide() {}
+
+    teleport() {
+        // TODO
     }
 }

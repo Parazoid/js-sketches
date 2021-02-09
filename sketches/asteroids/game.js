@@ -6,31 +6,31 @@ let gameState = false;
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     bgColor = color("#23272a");
+    background(bgColor);
+
     ship = new Ship();
 }
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+function draw() {
+    if (!gameState) displayMainMenu();
 }
 
 function keyPressed() {
-    if (keyCode == ENTER) {
+    if (keyCode == 32 && !gameState) {
+        // 32 is the code for spacebar;
         gameState = true;
         initializeGame();
     }
 }
 
-function mousePressed() {
-    ship.thrust();
+function displayMainMenu() {
+    console.log("Game hasn't initialized.");
 }
-
-function draw() {
-    background(bgColor);
-    ship.render();
-}
-
-function displayMainMenu() {}
 
 function initializeGame() {
     console.log("Game initialized!");
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 }
