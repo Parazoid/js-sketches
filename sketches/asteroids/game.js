@@ -12,7 +12,15 @@ function setup() {
 }
 
 function draw() {
-    if (!gameState) displayMainMenu();
+    background(bgColor);
+    if (!gameState) displayMainMenu(1000);
+    ship.render();
+    ship.animate();
+    if (keyIsDown(LEFT_ARROW || A)) ship.bearing -= 0.05;
+    if (keyIsDown(RIGHT_ARROW || D)) ship.bearing += 0.05;
+    if (keyIsDown(UP_ARROW || W)) ship.thrust("forward");
+    if (keyIsDown(DOWN_ARROW || S)) ship.thrust("backward");
+    if (ship.bearing >= TWO_PI) ship.bearing = 0;
 }
 
 function keyPressed() {
@@ -23,8 +31,8 @@ function keyPressed() {
     }
 }
 
-function displayMainMenu() {
-    console.log("Game hasn't initialized.");
+function displayMainMenu(score) {
+    console.log(`Game hasn't initialized. Your score is ${score}`);
 }
 
 function initializeGame() {
